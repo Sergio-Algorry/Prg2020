@@ -25,7 +25,7 @@ namespace Prueba1
         {
             string terceraVariable = " ¿Como te va?";
 
-            label1.Text = "Hola " + PrimerVariable + terceraVariable + SegundaVariable;
+            label1.Text = "Hola " + PrimerVariable + terceraVariable;
 
         }
     }
