@@ -19,29 +19,24 @@ namespace EjemploSW
 
         private void btAceptar_Click(object sender, EventArgs e)
         {
-                int nota = System.Convert.ToInt32(txtNota.Text);
-                switch (nota)
-                {
-                    case 1:
-                        lblRes.Text = "Aplazado";
-                        break;
-                    case 2:
-                        lblRes.Text = "Aplazado";
-                        break;
-                    case 3:
-                        lblRes.Text = "Aprobado";
-                        break;
-                    case 4:
-                        lblRes.Text = "Promocionado";
-                        break;
-                    case 5:
-                        lblRes.Text = "Promocionado";
-                        break;
-                    default:
-                        lblRes.Text = "Nota no válida";
-                        break;
-                }
-
+            int nota = System.Convert.ToInt32(txtNota.Text);
+            switch (nota)
+            {
+                case 1:
+                case 2:
+                    lblRes.Text = "Aplazado";
+                    break;
+                case 3:
+                    lblRes.Text = "Aprobado";
+                    break;
+                case 4:
+                case 5:
+                    lblRes.Text = "Promocionado";
+                    break;
+                default:
+                    lblRes.Text = "Nota no válida";
+                    break;
+            }
 
             //switch (txtNota.Text.Trim())
             //{
@@ -69,7 +64,6 @@ namespace EjemploSW
 
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
