@@ -45,16 +45,16 @@
             // lbl
             // 
             this.lbl.BackColor = System.Drawing.Color.Red;
-            this.lbl.Location = new System.Drawing.Point(3, 87);
+            this.lbl.Location = new System.Drawing.Point(3, 76);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(50, 17);
+            this.lbl.Size = new System.Drawing.Size(106, 15);
             this.lbl.TabIndex = 1;
             // 
             // EjemploWhile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 161);
+            this.ClientSize = new System.Drawing.Size(588, 161);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.bt);
             this.Name = "EjemploWhile";

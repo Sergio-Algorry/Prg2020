@@ -19,24 +19,41 @@ namespace EjemploWhile
 
         private void bt_Click(object sender, EventArgs e)
         {
-            int AnchoFormulario = this.Width;
-            int AnchoLabel = lbl.Width;
-            int AnchoBorde = 20;
-            int X = 0;
-            int Paso = 1;
-
-            //for (int X = 0; X < AnchoFormulario-AnchoLabel-AnchoBorde; X++)
-            //{
-            //    lbl.Left = X;
-
-            //}
-
-            while (X < AnchoFormulario - AnchoLabel - AnchoBorde)
+            Random Generador = new Random();
+            
+            int AnchoFormulario;
+            int AnchoLabel;
+            int AnchoBorde;
+            int X;
+            int Paso;
+            int Repeticion = 0;
+            int TotalRepeticion = 10;
+            lbl.Width = 106;
+            lbl.Height = 15;
+            do
             {
-                lbl.Left = X;
-                //lbl.Top = X;
-                X = X + Paso;
-            }
+                AnchoFormulario = this.Width;
+                AnchoLabel = lbl.Width;
+                AnchoBorde = 0;
+                X = 0;
+                Paso = Generador.Next(1, 50);
+                Repeticion = Repeticion + 1;
+
+                while (X < (AnchoFormulario - AnchoBorde - AnchoLabel))
+                {
+                    lbl.Left = X;
+                    this.Refresh();
+                    X = X + Paso;
+                }
+
+                lbl.Width = Generador.Next(2, 300);
+                lbl.Height = Generador.Next(5, 50);
+               
+
+                //lbl.Width = System.Convert.ToInt32( 0.7 * lbl.Width);
+                //lbl.Height = lbl.Height * 2;
+
+            } while (Repeticion < TotalRepeticion);
         }
     }
 }
