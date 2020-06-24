@@ -13,8 +13,7 @@ namespace ArregloNombres
     public partial class frmNombres : Form
     {
         string[] Lista;
-        int Posicion = 0;
-
+        int Posicion;
         public frmNombres()
         {
             InitializeComponent();
