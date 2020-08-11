@@ -139,7 +139,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtCodigo;
+        public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button btAceptar;
