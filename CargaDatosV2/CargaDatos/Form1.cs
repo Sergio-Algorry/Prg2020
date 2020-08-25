@@ -39,10 +39,16 @@ namespace CargaDatos
                 Datos = temp;
 
                 Datos[Indice] = txtDato.Text;
+                Indice = Indice + 1;
             }
             txtDato.Focus();
             txtDato.SelectAll();
-            //txtDato.Text = "";
+
+            //string pepe = "un dato";
+            //string juan = "otro dato";
+
+            //int i = pepe.CompareTo(juan);
+
         }
 
         //private void label1_Click(object sender, EventArgs e)
