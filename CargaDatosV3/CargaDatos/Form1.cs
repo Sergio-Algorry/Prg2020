@@ -12,58 +12,94 @@ namespace CargaDatos
 {
     public partial class frmInicio : Form
     {
-        string[] Datos = new string[1];
+        string[] Nombres = new string[1];
+        string[] Apellidos = new string[1];
+
+        //Lista ListaDeNombres = new Lista();
+        //Lista ListaDeApellidos = new Lista();
+
         int Indice = 0;
 
         public frmInicio()
         {
             InitializeComponent();
+            //ListaDeNombres.Redimension();
+            //ListaDeApellidos.Redimension();
         }
 
         private void btCargar_Click(object sender, EventArgs e)
         {
-            if (Indice < Datos.Length)
+            if (Indice < Nombres.Length)
             {
-                Datos[Indice] = txtDato.Text;
-                Indice = Indice + 1;
+                CargaDatos();
             }
             else
             {
-                string[] temp = new string[Datos.Length + 1];
+                //actualizo la dimensión de Nombres
+                Nombres = Redimension(Nombres);
 
-                for (int i = 0; i < Datos.Length; i++)
-                {
-                    temp[i] = Datos[i];
-                }
+                //actualizo la dimensión de Apellidos
+                //string[] tempa = new string[Apellidos.Length + 1];
+                //for (int i = 0; i < Apellidos.Length; i++)
+                //{
+                //    tempa[i] = Apellidos[i];
+                //}
+                //Apellidos = tempa;
+                Apellidos = Redimension(Apellidos);
 
-                Datos = temp;
-
-                Datos[Indice] = txtDato.Text;
-                Indice = Indice + 1;
+                CargaDatos();
             }
-            txtDato.Focus();
-            txtDato.SelectAll();
-
-            //string pepe = "un dato";
-            //string juan = "otro dato";
-
-            //int i = pepe.CompareTo(juan);
-
+            txtNombre.Focus();
+            txtNombre.SelectAll();
         }
 
-        //private void label1_Click(object sender, EventArgs e)
-        //{
+        private string[] Redimension(string[] Dato)
+        {
+            string[] temp = new string[Dato.Length + 1];
+            for (int i = 0; i < Dato.Length; i++)
+            {
+                temp[i] = Dato[i];
+            }
+            Dato = temp;
 
-        //}
+            return Dato;
+        }
 
-        //private void btIniciar_Click(object sender, EventArgs e)
-        //{
-        //    Datos = new string[System.Convert.ToInt32( txtCantidad.Text)];
-        //    Indice = 0;
+        private void CargaDatos()
+        {
+            Nombres[Indice] = txtNombre.Text;
+            Apellidos[Indice] = txtApellido.Text;
+            Indice = Indice + 1;
+            lblSalida.Text = lblSalida.Text + "\r\n" + txtNombre.Text + " " + txtApellido.Text;
+        }
+    }
 
-        //    btCargar.Enabled = true;
+    //public class Lista
+    //{
+    //    public string[] Redimension(string[] Dato)
+    //    {
+    //        string[] temp = new string[Dato.Length + 1];
+    //        for (int i = 0; i < Dato.Length; i++)
+    //        {
+    //            temp[i] = Dato[i];
+    //        }
+    //        Dato = temp;
 
-        //    txtDato.Focus();
-        //}
-    } 
+    //        return Dato;
+    //    }
+
+    //    public string[] OrdenarAlfabeticamente()
+    //    {
+    //        return new string[1];
+    //    }
+
+    //    public string Listar()
+    //    {
+    //    }
+
+    //    public string[] agregar()
+    //    {
+
+    //    }
+    //}
 }
