@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,12 @@ namespace CargaDatos
 {
     public partial class frmInicio : Form
     {
-        string[] Nombres = new string[1];
-        string[] Apellidos = new string[1];
+        private string[] Nombres = new string[1];
+        private string[] Apellidos = new string[1];
+        
+        Lista Nombre = new Lista();
+        Pepe Var = new Pepe();
+        Pepe Var2 = new Pepe();
 
         //Lista ListaDeNombres = new Lista();
         //Lista ListaDeApellidos = new Lista();
