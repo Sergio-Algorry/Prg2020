@@ -16,7 +16,7 @@ namespace FE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmFacturar());
+            Application.Run(new frmFactura());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FE
 {
-    partial class frmFacturar
+    partial class frmFactura
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -39,23 +39,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btNueva = new System.Windows.Forms.Button();
             this.paPie = new System.Windows.Forms.Panel();
-            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblIVA = new System.Windows.Forms.Label();
+            this.lblBruto = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtIVA = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBruto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.paRenglones = new System.Windows.Forms.Panel();
             this.lblkRenglones = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtTotRenglon = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtUnitario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtProducto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btNuevoRenglon = new System.Windows.Forms.Button();
+            this.btConfirmar = new System.Windows.Forms.Button();
+            this.lblErrorEncabezado = new System.Windows.Forms.Label();
             this.paEncabezado.SuspendLayout();
             this.paPie.SuspendLayout();
             this.paRenglones.SuspendLayout();
@@ -64,6 +66,8 @@
             // paEncabezado
             // 
             this.paEncabezado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paEncabezado.Controls.Add(this.lblErrorEncabezado);
+            this.paEncabezado.Controls.Add(this.btConfirmar);
             this.paEncabezado.Controls.Add(this.txtFecha);
             this.paEncabezado.Controls.Add(this.label4);
             this.paEncabezado.Controls.Add(this.txtCuit);
@@ -75,7 +79,7 @@
             this.paEncabezado.Controls.Add(this.btNueva);
             this.paEncabezado.Location = new System.Drawing.Point(12, 12);
             this.paEncabezado.Name = "paEncabezado";
-            this.paEncabezado.Size = new System.Drawing.Size(776, 80);
+            this.paEncabezado.Size = new System.Drawing.Size(776, 101);
             this.paEncabezado.TabIndex = 0;
             // 
             // txtFecha
@@ -154,39 +158,59 @@
             // 
             // paPie
             // 
-            this.paPie.Controls.Add(this.txtTotal);
+            this.paPie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paPie.Controls.Add(this.lblTotal);
+            this.paPie.Controls.Add(this.lblIVA);
+            this.paPie.Controls.Add(this.lblBruto);
             this.paPie.Controls.Add(this.label11);
-            this.paPie.Controls.Add(this.txtIVA);
             this.paPie.Controls.Add(this.label10);
-            this.paPie.Controls.Add(this.txtBruto);
             this.paPie.Controls.Add(this.label9);
             this.paPie.Location = new System.Drawing.Point(12, 365);
             this.paPie.Name = "paPie";
-            this.paPie.Size = new System.Drawing.Size(776, 84);
+            this.paPie.Size = new System.Drawing.Size(776, 96);
             this.paPie.TabIndex = 1;
             // 
-            // txtTotal
+            // lblTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(657, 55);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 5;
+            this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(657, 61);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(100, 23);
+            this.lblTotal.TabIndex = 8;
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblIVA
+            // 
+            this.lblIVA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIVA.Location = new System.Drawing.Point(657, 32);
+            this.lblIVA.Name = "lblIVA";
+            this.lblIVA.Size = new System.Drawing.Size(100, 23);
+            this.lblIVA.TabIndex = 7;
+            this.lblIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblBruto
+            // 
+            this.lblBruto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblBruto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBruto.Location = new System.Drawing.Point(657, 6);
+            this.lblBruto.Name = "lblBruto";
+            this.lblBruto.Size = new System.Drawing.Size(100, 23);
+            this.lblBruto.TabIndex = 6;
+            this.lblBruto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(547, 55);
+            this.label11.Location = new System.Drawing.Point(551, 61);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 23);
             this.label11.TabIndex = 4;
             this.label11.Text = "TOTAL";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtIVA
-            // 
-            this.txtIVA.Location = new System.Drawing.Point(657, 29);
-            this.txtIVA.Name = "txtIVA";
-            this.txtIVA.Size = new System.Drawing.Size(100, 20);
-            this.txtIVA.TabIndex = 3;
             // 
             // label10
             // 
@@ -196,13 +220,6 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "IVA";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBruto
-            // 
-            this.txtBruto.Location = new System.Drawing.Point(657, 3);
-            this.txtBruto.Name = "txtBruto";
-            this.txtBruto.Size = new System.Drawing.Size(100, 20);
-            this.txtBruto.TabIndex = 1;
             // 
             // label9
             // 
@@ -215,19 +232,21 @@
             // 
             // paRenglones
             // 
+            this.paRenglones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paRenglones.Controls.Add(this.lblkRenglones);
-            this.paRenglones.Controls.Add(this.textBox8);
+            this.paRenglones.Controls.Add(this.txtTotRenglon);
             this.paRenglones.Controls.Add(this.label8);
-            this.paRenglones.Controls.Add(this.textBox7);
+            this.paRenglones.Controls.Add(this.txtUnitario);
             this.paRenglones.Controls.Add(this.label7);
-            this.paRenglones.Controls.Add(this.textBox6);
+            this.paRenglones.Controls.Add(this.txtProducto);
             this.paRenglones.Controls.Add(this.label6);
-            this.paRenglones.Controls.Add(this.textBox5);
+            this.paRenglones.Controls.Add(this.txtCantidad);
             this.paRenglones.Controls.Add(this.label5);
             this.paRenglones.Controls.Add(this.btNuevoRenglon);
-            this.paRenglones.Location = new System.Drawing.Point(12, 98);
+            this.paRenglones.Enabled = false;
+            this.paRenglones.Location = new System.Drawing.Point(12, 119);
             this.paRenglones.Name = "paRenglones";
-            this.paRenglones.Size = new System.Drawing.Size(776, 261);
+            this.paRenglones.Size = new System.Drawing.Size(776, 240);
             this.paRenglones.TabIndex = 2;
             // 
             // lblkRenglones
@@ -238,12 +257,13 @@
             this.lblkRenglones.Size = new System.Drawing.Size(0, 13);
             this.lblkRenglones.TabIndex = 18;
             // 
-            // textBox8
+            // txtTotRenglon
             // 
-            this.textBox8.Location = new System.Drawing.Point(657, 31);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 17;
+            this.txtTotRenglon.Location = new System.Drawing.Point(657, 31);
+            this.txtTotRenglon.Name = "txtTotRenglon";
+            this.txtTotRenglon.ReadOnly = true;
+            this.txtTotRenglon.Size = new System.Drawing.Size(100, 20);
+            this.txtTotRenglon.TabIndex = 17;
             // 
             // label8
             // 
@@ -254,12 +274,12 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "$ Total";
             // 
-            // textBox7
+            // txtUnitario
             // 
-            this.textBox7.Location = new System.Drawing.Point(522, 31);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 15;
+            this.txtUnitario.Location = new System.Drawing.Point(522, 31);
+            this.txtUnitario.Name = "txtUnitario";
+            this.txtUnitario.Size = new System.Drawing.Size(100, 20);
+            this.txtUnitario.TabIndex = 15;
             // 
             // label7
             // 
@@ -270,12 +290,12 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "$ Unitario";
             // 
-            // textBox6
+            // txtProducto
             // 
-            this.textBox6.Location = new System.Drawing.Point(155, 31);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(332, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtProducto.Location = new System.Drawing.Point(155, 31);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(332, 20);
+            this.txtProducto.TabIndex = 13;
             // 
             // label6
             // 
@@ -286,12 +306,12 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Producto";
             // 
-            // textBox5
+            // txtCantidad
             // 
-            this.textBox5.Location = new System.Drawing.Point(27, 31);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtCantidad.Location = new System.Drawing.Point(27, 31);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 11;
             // 
             // label5
             // 
@@ -311,20 +331,38 @@
             this.btNuevoRenglon.Text = "Cargar Producto";
             this.btNuevoRenglon.UseVisualStyleBackColor = true;
             // 
-            // Facturar
+            // btConfirmar
+            // 
+            this.btConfirmar.Location = new System.Drawing.Point(671, 66);
+            this.btConfirmar.Name = "btConfirmar";
+            this.btConfirmar.Size = new System.Drawing.Size(99, 23);
+            this.btConfirmar.TabIndex = 9;
+            this.btConfirmar.Text = "Confirmar";
+            this.btConfirmar.UseVisualStyleBackColor = true;
+            this.btConfirmar.Click += new System.EventHandler(this.btConfirmar_Click);
+            // 
+            // lblErrorEncabezado
+            // 
+            this.lblErrorEncabezado.AutoSize = true;
+            this.lblErrorEncabezado.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorEncabezado.Location = new System.Drawing.Point(17, 83);
+            this.lblErrorEncabezado.Name = "lblErrorEncabezado";
+            this.lblErrorEncabezado.Size = new System.Drawing.Size(0, 13);
+            this.lblErrorEncabezado.TabIndex = 10;
+            // 
+            // frmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 461);
             this.Controls.Add(this.paRenglones);
             this.Controls.Add(this.paPie);
             this.Controls.Add(this.paEncabezado);
-            this.Name = "Facturar";
+            this.Name = "frmFactura";
             this.Text = "Form1";
             this.paEncabezado.ResumeLayout(false);
             this.paEncabezado.PerformLayout();
             this.paPie.ResumeLayout(false);
-            this.paPie.PerformLayout();
             this.paRenglones.ResumeLayout(false);
             this.paRenglones.PerformLayout();
             this.ResumeLayout(false);
@@ -346,21 +384,23 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btNueva;
         private System.Windows.Forms.Button btNuevoRenglon;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtTotRenglon;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtUnitario;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtIVA;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtBruto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblkRenglones;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblIVA;
+        private System.Windows.Forms.Label lblBruto;
+        private System.Windows.Forms.Button btConfirmar;
+        private System.Windows.Forms.Label lblErrorEncabezado;
     }
 }
 
