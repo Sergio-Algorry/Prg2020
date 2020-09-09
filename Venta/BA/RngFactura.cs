@@ -23,6 +23,14 @@ namespace BA
         {
             return cantidad * preUnitario;
         }
+
+        public string MuestraRenglon()
+        {
+            return cantidad.ToString("#,##0.00") + " - "
+                   + producto + "  "
+                   + preUnitario.ToString("#,##0.00") + "  "
+                   + Total().ToString("#,##0.00");
+        }          
         #endregion
     }
 }

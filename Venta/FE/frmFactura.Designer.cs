@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.paEncabezado = new System.Windows.Forms.Panel();
+            this.lblErrorEncabezado = new System.Windows.Forms.Label();
+            this.btConfirmar = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
@@ -46,7 +48,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.paRenglones = new System.Windows.Forms.Panel();
-            this.lblkRenglones = new System.Windows.Forms.Label();
+            this.lblRenglones = new System.Windows.Forms.Label();
             this.txtTotRenglon = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtUnitario = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btNuevoRenglon = new System.Windows.Forms.Button();
-            this.btConfirmar = new System.Windows.Forms.Button();
-            this.lblErrorEncabezado = new System.Windows.Forms.Label();
             this.paEncabezado.SuspendLayout();
             this.paPie.SuspendLayout();
             this.paRenglones.SuspendLayout();
@@ -81,6 +81,25 @@
             this.paEncabezado.Name = "paEncabezado";
             this.paEncabezado.Size = new System.Drawing.Size(776, 101);
             this.paEncabezado.TabIndex = 0;
+            // 
+            // lblErrorEncabezado
+            // 
+            this.lblErrorEncabezado.AutoSize = true;
+            this.lblErrorEncabezado.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorEncabezado.Location = new System.Drawing.Point(17, 83);
+            this.lblErrorEncabezado.Name = "lblErrorEncabezado";
+            this.lblErrorEncabezado.Size = new System.Drawing.Size(0, 13);
+            this.lblErrorEncabezado.TabIndex = 10;
+            // 
+            // btConfirmar
+            // 
+            this.btConfirmar.Location = new System.Drawing.Point(671, 66);
+            this.btConfirmar.Name = "btConfirmar";
+            this.btConfirmar.Size = new System.Drawing.Size(99, 23);
+            this.btConfirmar.TabIndex = 9;
+            this.btConfirmar.Text = "Confirmar";
+            this.btConfirmar.UseVisualStyleBackColor = true;
+            this.btConfirmar.Click += new System.EventHandler(this.btConfirmar_Click);
             // 
             // txtFecha
             // 
@@ -233,7 +252,7 @@
             // paRenglones
             // 
             this.paRenglones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.paRenglones.Controls.Add(this.lblkRenglones);
+            this.paRenglones.Controls.Add(this.lblRenglones);
             this.paRenglones.Controls.Add(this.txtTotRenglon);
             this.paRenglones.Controls.Add(this.label8);
             this.paRenglones.Controls.Add(this.txtUnitario);
@@ -249,13 +268,13 @@
             this.paRenglones.Size = new System.Drawing.Size(776, 240);
             this.paRenglones.TabIndex = 2;
             // 
-            // lblkRenglones
+            // lblRenglones
             // 
-            this.lblkRenglones.AutoSize = true;
-            this.lblkRenglones.Location = new System.Drawing.Point(27, 85);
-            this.lblkRenglones.Name = "lblkRenglones";
-            this.lblkRenglones.Size = new System.Drawing.Size(0, 13);
-            this.lblkRenglones.TabIndex = 18;
+            this.lblRenglones.AutoSize = true;
+            this.lblRenglones.Location = new System.Drawing.Point(27, 85);
+            this.lblRenglones.Name = "lblRenglones";
+            this.lblRenglones.Size = new System.Drawing.Size(0, 13);
+            this.lblRenglones.TabIndex = 18;
             // 
             // txtTotRenglon
             // 
@@ -330,25 +349,7 @@
             this.btNuevoRenglon.TabIndex = 9;
             this.btNuevoRenglon.Text = "Cargar Producto";
             this.btNuevoRenglon.UseVisualStyleBackColor = true;
-            // 
-            // btConfirmar
-            // 
-            this.btConfirmar.Location = new System.Drawing.Point(671, 66);
-            this.btConfirmar.Name = "btConfirmar";
-            this.btConfirmar.Size = new System.Drawing.Size(99, 23);
-            this.btConfirmar.TabIndex = 9;
-            this.btConfirmar.Text = "Confirmar";
-            this.btConfirmar.UseVisualStyleBackColor = true;
-            this.btConfirmar.Click += new System.EventHandler(this.btConfirmar_Click);
-            // 
-            // lblErrorEncabezado
-            // 
-            this.lblErrorEncabezado.AutoSize = true;
-            this.lblErrorEncabezado.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorEncabezado.Location = new System.Drawing.Point(17, 83);
-            this.lblErrorEncabezado.Name = "lblErrorEncabezado";
-            this.lblErrorEncabezado.Size = new System.Drawing.Size(0, 13);
-            this.lblErrorEncabezado.TabIndex = 10;
+            this.btNuevoRenglon.Click += new System.EventHandler(this.btNuevoRenglon_Click);
             // 
             // frmFactura
             // 
@@ -395,7 +396,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblkRenglones;
+        private System.Windows.Forms.Label lblRenglones;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblIVA;
         private System.Windows.Forms.Label lblBruto;

@@ -20,7 +20,8 @@ namespace BA
         public decimal IVA = 0;
         public decimal Total = 0;
 
-        //public ListaRngFactura
+        public RngFactura[] ListaRngFactura = new RngFactura[10];
+        private int indice = 0;
         #endregion
 
         #region Constructor
@@ -35,7 +36,12 @@ namespace BA
         #endregion
 
         #region Metodo
-
+        public void AddRngFactura(RngFactura rngFacturaObj)
+        {
+            //todo: CONTROLAR ERROR DE SOBREPASAR CAPACIDAD DEL ARREGLO
+            ListaRngFactura[indice] = rngFacturaObj;
+            indice = indice + 1;
+        }
         #endregion
     }
 }
