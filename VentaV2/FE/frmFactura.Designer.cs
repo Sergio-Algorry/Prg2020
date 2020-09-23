@@ -246,7 +246,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 23);
             this.label9.TabIndex = 0;
-            this.label9.Text = "BRUTO";
+            this.label9.Text = "NETO";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // paRenglones
