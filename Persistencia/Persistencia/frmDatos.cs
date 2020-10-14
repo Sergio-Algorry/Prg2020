@@ -34,16 +34,16 @@ namespace Persistencia
             {
                 tabla.Rows.Add();
 
-                tabla.Rows[tabla.Rows.Count - 1]["Nombre"] = "Pepe";
-                tabla.Rows[tabla.Rows.Count - 1]["Cantidad"] = 1050;
+                tabla.Rows[tabla.Rows.Count - 1]["Nombre"] = textBox1.Text;
+                tabla.Rows[tabla.Rows.Count - 1]["Cantidad"] = System.Convert.ToInt32(textBox2.Text);
 
-                tabla.Rows.Add();
+                //tabla.Rows.Add();
 
-                tabla.Rows[tabla.Rows.Count - 1][0] = "Italo";
-                tabla.Rows[tabla.Rows.Count - 1][1] = 3;
+                //tabla.Rows[tabla.Rows.Count - 1][0] = "Italo";
+                //tabla.Rows[tabla.Rows.Count - 1][1] = 3;
                 
-                decimal dummy = 0;
-                decimal pepe = 10 / dummy;
+                //decimal dummy = 0;
+                //decimal pepe = 10 / dummy;
             }
             catch (Exception ee)
             {
